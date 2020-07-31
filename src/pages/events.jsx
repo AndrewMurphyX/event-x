@@ -1,9 +1,9 @@
 import React from "react"
 import "normalize.css"
 import styled from "styled-components"
-import Layout from '../components/Layout'
 import { Button, PrimaryButton } from "../components/Button"
 import Header from "../components/Header"
+import Layout from "../components/Layout"
 import "../custom.css"
 
 const Container = styled.div`
@@ -76,11 +76,11 @@ const events = [
   },
 ]
 
-export default function Home() {
+const EventsPage =() => {
   return (
     <Layout>
-      <Header title='Welcome to Event X' subtitle='The Future Is Digital'/>
-      <Container>
+      <Header title='Upcoming Events' subtitle='View Our Upcoming Events Below' />
+      <Container style={{marginTop: 150}}>
         {events.map((event, i) => (
           <Event key={i} name={event.name} details={event.details} />
         ))}
@@ -91,3 +91,5 @@ export default function Home() {
     </Layout>
   )
 }
+
+export default EventsPage
